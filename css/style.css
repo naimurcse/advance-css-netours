@@ -34,8 +34,11 @@ body{
     text-transform: uppercase;
     text-decoration: none;
     padding: 15px 40px;
-    border-radius: 50px;
+    border-radius: 100px;
     transition: all 0.2s; 
+
+    position: relative;
+
 }
 
 .btn:hover{
@@ -48,6 +51,44 @@ body{
     box-shadow: 0 5px 10px rgba(0,0,0,0.2);
 
 }
+
+.btn::after{
+    content:"";
+    display: inline-block;
+    height: 100%;  
+    width: 100%;  /*100% of the width of the button*/
+    border-radius: 100px;
+
+    position: absolute;
+    top: 0;
+    left: 0; 
+    z-index: -1;
+    transition: all .4s;
+
+    
+}
+
+.btn-white::after{
+    background-color: #fff;
+}
+
+.btn:hover::after{
+    transform: scaleX(1.5);
+    opacity: 0;
+}
+
+.btn-animated{
+    /* animation */
+
+    /* animation-name: moveInBottom;
+    animation-duration: .8s;
+    animation-timing-function: ease-out; 
+    animation-delay: .7s; */
+
+    animation: moveInBottom .5s ease-out .7s;
+    animation-fill-mode: backwards;  /*It will automatically apply the style up to 0% before the animation start*/
+}
+
 
 .btn-white{
     background-color: #fff;
@@ -151,6 +192,7 @@ body{
         opacity: 1;
     }
 }
+
 @keyframes moveInRight {
     /* From the beginning */
     0%{
@@ -165,6 +207,20 @@ body{
     /* By the end */
     100%{
         transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes moveInBottom {
+    /* From the beginning */
+    0%{
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    
+    /* By the end */
+    100%{
+        transform: translateY(0);
         opacity: 1;
     }
 }
