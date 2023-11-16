@@ -60,7 +60,6 @@ body{
 }
 
 .text-box{
-
     position: absolute;
     top: 40%;
     left: 50%;
@@ -71,17 +70,71 @@ body{
     color: #fff;
     text-transform: uppercase;
 
+    /* animation property */
+    backface-visibility: hidden;
 }
+
 .heading-primary-main{
     display: block;
     font-size: 60px;
     font-weight: 400;
     letter-spacing: 35px;
+
+    animation-name: moveInLeft;
+    animation-duration: .8s;
+    animation-timing-function: ease-out;
+    
+    
+    /* animation-iteration-count: 3; */
+    /* animation-delay: 1s; */
 }
+
 .heading-primary-sub{
     display: block;
     font-size: 20px;
     font-weight: 700;
     letter-spacing: 17.4px;
+
+    animation-name: moveInRight;
+    animation-duration: .8s;
+    animation-timing-function: ease-out;
 }
-    /* Header End */ 
+/* Header End */ 
+
+
+/* Animation Start */
+@keyframes moveInLeft {
+    /* From the beginning */
+    0%{
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    
+    80%{
+        transform: translateX(10px);
+    }
+    
+    /* By the end */
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+@keyframes moveInRight {
+    /* From the beginning */
+    0%{
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    
+    80%{
+        transform: translateX(-10px);
+    }
+    
+    /* By the end */
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+/* Animation End */
