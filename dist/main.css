@@ -1,15 +1,6 @@
-/*
-COLORS:
-
-Light green: #7ed56f
-Medium green: #55c57a
-Dark green: #28b485
-
-*/
 /* Variable */
-/* Import google font */
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap");
 /* universal reset */
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap");
 *,
 *::after,
 *::before {
@@ -23,6 +14,55 @@ html {
 }
 
 body {
+  box-sizing: border-box;
+}
+
+/* Animation Start */
+@keyframes moveInLeft {
+  /* From the beginning */
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem);
+  }
+  80% {
+    transform: translateX(1rem);
+  }
+  /* By the end */
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes moveInRight {
+  /* From the beginning */
+  0% {
+    opacity: 0;
+    transform: translateX(10rem);
+  }
+  80% {
+    transform: translateX(-1rem);
+  }
+  /* By the end */
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes moveInBottom {
+  /* From the beginning */
+  0% {
+    opacity: 0;
+    transform: translateY(10rem);
+  }
+  /* By the end */
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+/* Animation End */
+/* Import google font */
+body {
   font-family: "Lato", sans-serif;
   font-weight: 400;
   font-size: 1.6rem;
@@ -30,20 +70,38 @@ body {
   /*It's 1.7 times bigger than the predefined line height.*/
   color: #777;
   padding: 3rem;
-  box-sizing: border-box;
+}
+
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+  margin-bottom: 6rem;
+  /* animation property */
+  backface-visibility: hidden;
+}
+.heading-primary--main {
+  display: block;
+  font-size: 6rem;
+  font-weight: 400;
+  letter-spacing: 3.5rem;
+  animation-name: moveInLeft;
+  animation-duration: 0.8s;
+  animation-timing-function: ease-out;
+  /* animation-iteration-count: 3; */
+  /* animation-delay: 1s; */
+}
+.heading-primary--sub {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 1.75rem;
+  animation-name: moveInRight;
+  animation-duration: 0.8s;
+  animation-timing-function: ease-out;
 }
 
 /* Button Style */
-.btn:link {
-  display: inline-block;
-  text-transform: uppercase;
-  text-decoration: none;
-  padding: 1.5rem 4rem;
-  border-radius: 10rem;
-  transition: all 0.2s;
-  position: relative;
-}
-.btn:visited {
+.btn:link, .btn:visited {
   display: inline-block;
   text-transform: uppercase;
   text-decoration: none;
@@ -128,76 +186,11 @@ body {
   text-align: center;
 }
 
-.heading-primary {
-  color: #fff;
-  text-transform: uppercase;
-  margin-bottom: 6rem;
-  /* animation property */
-  backface-visibility: hidden;
-}
-.heading-primary--main {
-  display: block;
-  font-size: 6rem;
-  font-weight: 400;
-  letter-spacing: 3.5rem;
-  animation-name: moveInLeft;
-  animation-duration: 0.8s;
-  animation-timing-function: ease-out;
-  /* animation-iteration-count: 3; */
-  /* animation-delay: 1s; */
-}
-.heading-primary--sub {
-  display: block;
-  font-size: 2rem;
-  font-weight: 700;
-  letter-spacing: 1.75rem;
-  animation-name: moveInRight;
-  animation-duration: 0.8s;
-  animation-timing-function: ease-out;
-}
+/*
+COLORS:
 
-/* Header End */
-/* Animation Start */
-@keyframes moveInLeft {
-  /* From the beginning */
-  0% {
-    opacity: 0;
-    transform: translateX(-10rem);
-  }
-  80% {
-    transform: translateX(1rem);
-  }
-  /* By the end */
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-@keyframes moveInRight {
-  /* From the beginning */
-  0% {
-    opacity: 0;
-    transform: translateX(10rem);
-  }
-  80% {
-    transform: translateX(-1rem);
-  }
-  /* By the end */
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-@keyframes moveInBottom {
-  /* From the beginning */
-  0% {
-    opacity: 0;
-    transform: translateY(10rem);
-  }
-  /* By the end */
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-/* Animation End *//*# sourceMappingURL=main.css.map */
+Light green: #7ed56f
+Medium green: #55c57a
+Dark green: #28b485
+
+*//*# sourceMappingURL=main.css.map */
