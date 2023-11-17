@@ -7,28 +7,34 @@ Dark green: #28b485
 
 */
 
+/* Variable */
+$color-primary: #55c57a;
+$color-primary-light: #7ed56f;
+$color-primary-dark: #28b485;
+
 /* Import google font */
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');
 
 /* universal reset */
 *,
 *::after,
-*::before{
+*::before {
     margin: 0;
     padding: 0;
-    
+
     box-sizing: inherit;
 }
 
-html{
+html {
     font-size: 10px;
 }
 
-body{
+body {
     font-family: 'Lato', sans-serif;
     font-weight: 400;
     font-size: 1.6rem;
-    line-height: 1.7;   /*It's 1.7 times bigger than the predefined line height.*/
+    line-height: 1.7;
+    /*It's 1.7 times bigger than the predefined line height.*/
     color: #777;
     padding: 3rem;
 
@@ -38,55 +44,56 @@ body{
 /* Button Style */
 
 .btn:link,
-.btn:visited{
+.btn:visited {
     display: inline-block;
     text-transform: uppercase;
     text-decoration: none;
     padding: 1.5rem 4rem;
     border-radius: 10rem;
-    transition: all 0.2s; 
+    transition: all 0.2s;
 
     position: relative;
 
 }
 
-.btn:hover{
+.btn:hover {
     transform: translateY(-0.3rem);
-    box-shadow: 0 1rem 2rem rgba(0,0,0,0.2);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
 }
 
-.btn:active{
+.btn:active {
     transform: translateY(-0.1rem);
-    box-shadow: 0 .5rem 1rem rgba(0,0,0,0.2);
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.2);
 
 }
 
-.btn::after{
-    content:"";
+.btn::after {
+    content: "";
     display: inline-block;
-    height: 100%;  
-    width: 100%;  /*100% of the width of the button*/
+    height: 100%;
+    width: 100%;
+    /*100% of the width of the button*/
     border-radius: 10rem;
 
     position: absolute;
     top: 0;
-    left: 0; 
+    left: 0;
     z-index: -1;
     transition: all .4s;
 
-    
+
 }
 
-.btn--white::after{
+.btn--white::after {
     background-color: #fff;
 }
 
-.btn:hover::after{
+.btn:hover::after {
     transform: scaleX(1.5);
     opacity: 0;
 }
 
-.btn--animated{
+.btn--animated {
     /* animation */
 
     /* animation-name: moveInBottom;
@@ -95,28 +102,30 @@ body{
     animation-delay: .7s; */
 
     animation: moveInBottom .5s ease-out .7s;
-    animation-fill-mode: backwards;  /*It will automatically apply the style up to 0% before the animation start*/
+    animation-fill-mode: backwards;
+    /*It will automatically apply the style up to 0% before the animation start*/
 }
 
 
-.btn--white{
+.btn--white {
     background-color: #fff;
     color: #777;
 }
 
 /* Header Start */
-.header{
-    height: 95vh; /*header should be 95% of the viewport height*/
+.header {
+    height: 95vh;
+    /*header should be 95% of the viewport height*/
     /* background-image: url(../img/hero.jpg); */
     background-image: linear-gradient(to right bottom,
-                        rgba(128, 214, 113, 0.8),
-                        rgba(39, 180, 133, 0.8)), 
-                        url(../img/hero.jpg);
+            rgba($color-primary-light, 0.8),
+            rgba($color-primary-dark, 0.8)),
+        url(../img/hero.jpg);
     background-size: cover;
     background-position: top;
     /* background-position: bottom; */
     /* background-position: center; */
-    
+
     /* clip-path: polygon(left top, right top, right bottom, left bottom); */
     /* clip-path: polygon(x y, x y, x y, x y); */
     /* clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); */
@@ -127,35 +136,35 @@ body{
     position: relative;
 }
 
-.header__logo-box{
+.header__logo-box {
     position: absolute;
     top: 4rem;
     left: 4rem;
 }
 
-.header__logo{
+.header__logo {
     height: 3.5rem;
 }
 
-.header__text-box{
+.header__text-box {
     position: absolute;
     top: 40%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
 
     text-align: center;
 }
 
-.heading-primary{
+.heading-primary {
     color: #fff;
     text-transform: uppercase;
     margin-bottom: 6rem;
 
     /* animation property */
-    backface-visibility: hidden; 
+    backface-visibility: hidden;
 }
 
-.heading-primary--main{
+.heading-primary--main {
     display: block;
     font-size: 6rem;
     font-weight: 400;
@@ -164,13 +173,13 @@ body{
     animation-name: moveInLeft;
     animation-duration: .8s;
     animation-timing-function: ease-out;
-    
-    
+
+
     /* animation-iteration-count: 3; */
     /* animation-delay: 1s; */
 }
 
-.heading-primary--sub{
+.heading-primary--sub {
     display: block;
     font-size: 2rem;
     font-weight: 700;
@@ -180,57 +189,62 @@ body{
     animation-duration: .8s;
     animation-timing-function: ease-out;
 }
-/* Header End */ 
+
+/* Header End */
 
 
 /* Animation Start */
 @keyframes moveInLeft {
+
     /* From the beginning */
-    0%{
+    0% {
         opacity: 0;
         transform: translateX(-10rem);
     }
-    
-    80%{
+
+    80% {
         transform: translateX(1rem);
     }
-    
+
     /* By the end */
-    100%{
+    100% {
         transform: translateX(0);
         opacity: 1;
     }
 }
 
 @keyframes moveInRight {
+
     /* From the beginning */
-    0%{
+    0% {
         opacity: 0;
         transform: translateX(10rem);
     }
-    
-    80%{
+
+    80% {
         transform: translateX(-1rem);
     }
-    
+
     /* By the end */
-    100%{
+    100% {
         transform: translateX(0);
         opacity: 1;
     }
 }
 
 @keyframes moveInBottom {
+
     /* From the beginning */
-    0%{
+    0% {
         opacity: 0;
         transform: translateY(10rem);
     }
-    
+
     /* By the end */
-    100%{
+    100% {
         transform: translateY(0);
         opacity: 1;
     }
 }
+
 /* Animation End */
