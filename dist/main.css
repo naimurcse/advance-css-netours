@@ -34,7 +34,15 @@ body {
 }
 
 /* Button Style */
-.btn:link,
+.btn:link {
+  display: inline-block;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 1.5rem 4rem;
+  border-radius: 10rem;
+  transition: all 0.2s;
+  position: relative;
+}
 .btn:visited {
   display: inline-block;
   text-transform: uppercase;
@@ -44,17 +52,14 @@ body {
   transition: all 0.2s;
   position: relative;
 }
-
 .btn:hover {
   transform: translateY(-0.3rem);
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
 }
-
 .btn:active {
   transform: translateY(-0.1rem);
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
 }
-
 .btn::after {
   content: "";
   display: inline-block;
@@ -68,16 +73,17 @@ body {
   z-index: -1;
   transition: all 0.4s;
 }
-
-.btn--white::after {
-  background-color: #fff;
-}
-
 .btn:hover::after {
   transform: scaleX(1.5);
   opacity: 0;
 }
-
+.btn--white {
+  background-color: #fff;
+  color: #777;
+}
+.btn--white::after {
+  background-color: #fff;
+}
 .btn--animated {
   /* animation */
   /* animation-name: moveInBottom;
@@ -87,11 +93,6 @@ body {
   animation: moveInBottom 0.5s ease-out 0.7s;
   animation-fill-mode: backwards;
   /*It will automatically apply the style up to 0% before the animation start*/
-}
-
-.btn--white {
-  background-color: #fff;
-  color: #777;
 }
 
 /* Header Start */
@@ -111,17 +112,14 @@ body {
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   position: relative;
 }
-
 .header__logo-box {
   position: absolute;
   top: 4rem;
   left: 4rem;
 }
-
 .header__logo {
   height: 3.5rem;
 }
-
 .header__text-box {
   position: absolute;
   top: 40%;
@@ -137,7 +135,6 @@ body {
   /* animation property */
   backface-visibility: hidden;
 }
-
 .heading-primary--main {
   display: block;
   font-size: 6rem;
@@ -149,7 +146,6 @@ body {
   /* animation-iteration-count: 3; */
   /* animation-delay: 1s; */
 }
-
 .heading-primary--sub {
   display: block;
   font-size: 2rem;
